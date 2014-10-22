@@ -1,0 +1,1 @@
+this is a sample file. Node is smart enough to read from this file both synchronously and asynchronously. well I'm getting bored, gotta get started.. see you at the command line dude.. take care till.
