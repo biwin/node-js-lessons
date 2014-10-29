@@ -24,3 +24,13 @@ var server = http.createServer(function(request, response){
 server.listen(port, host, function(){
    console.log("Listening" + host + ":" + port);
 });
+
+fs.watch("config.json", function () {
+    config = JSON.parse(fs.readFileSync("config.json"));
+    host = config.host;
+    port = config.port;
+    server.close();
+    server.listen(port, host, function(){
+         console.log("Now listening to: " + host + ":" + port);
+        });
+});
