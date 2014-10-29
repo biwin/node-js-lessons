@@ -4,8 +4,9 @@
 var http = require("http");
 var fs = require("fs");
 console.log("Starting the server!");
-var host = "127.0.0.2";
-var port = 1337;
+var config = JSON.parse(fs.readFileSync("config.json"))
+var host = config.host;
+var port = config.port;
 var server = http.createServer(function(request, response){
     console.log("received request:" + request.url);
 
